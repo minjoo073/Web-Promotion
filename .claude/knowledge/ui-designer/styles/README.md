@@ -15,6 +15,9 @@ $(cat active.txt)
 | 번호 | 이름 | 슬러그 | 한 줄 | 파일 |
 |---|---|---|---|---|
 | **1** | Crowny Class | crowny-class | 보라→분홍 그라데이션, Pretendard, 16px 본문, radius 10/16 | [`01-crowny-class.md`](./01-crowny-class.md) |
+| **2** | RE:WAVE | rewave | 라일락+매리골드(KEY)+민트(RIDE), 무광 파스텔 Y2K, KiiiKiii 컴백 era | [`02-rewave.md`](./02-rewave.md) |
+
+*활성 = #2 RE:WAVE (2026-06-23, CEO 확정 docs/14 §4)*.
 
 > 새 스타일을 추가하려면:
 > 1. `NN-슬러그.md` 형식으로 파일 생성 (기존 스타일의 §2~§17 구조 그대로 따라야 함)

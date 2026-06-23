@@ -1,20 +1,19 @@
 /* ============================================================
    tokens.css — Web-Promotion (KiiiKiii · RE:WAVE era)
    RE:WAVE era = 시안 ③ Lilac/Mint 확정(CEO, 2026-06-23)
-   현재 활성 디자인 스타일: #1 Crowny Class
-   (출처: .claude/knowledge/ui-designer/styles/01-crowny-class.md)
+   현재 활성 디자인 스타일: #2 RE:WAVE
+   (출처: .claude/knowledge/ui-designer/styles/02-rewave.md)
    ------------------------------------------------------------
-   구조 (한 파일·한 군데서 본다 — 스타일 #1 §19 코드 룰):
-     [A] BASE  = Crowny Class 시스템 토큰 전체 (스타일 #1 §15 그대로).
+   구조 (한 파일·한 군데서 본다 — 스타일 #2 §19 코드 룰):
+     [A] BASE  = Crowny Class 시스템 토큰 전체 (스타일 #1 §15 그대로 상속).
                  radius/spacing/shadow/font-scale/transition/layout/border.
                  *변경 금지* — 전 강팀 공유 캐논. 브랜드 캐논색도 여기 박음.
-     [B] THEME = RE:WAVE era 오버라이드. 스타일 #1 §18 방식
-                 ("브랜드 HEX 두 값만 갈아끼움 + 레트로 질감 토큰 추가").
-                 활성 스타일 번호는 *여전히 #1* (테마 오버라이드일 뿐 새 스타일 아님).
-                 ★ 픽셀 최종값은 CEO 확정 — 아래 era HEX는 docs/06 §3-3
-                   "미니홈피 스킨 파스텔 + 비디오 신호색" 출처에 묶인 *방향 제안값*.
-                   CEO가 픽셀 확정 시 토큰 이름·구조는 유지하고 값만 교체.
-   룰(스타일 #1 §19): 임의 HEX·임의 px·새 웹폰트 CDN 금지.
+     [B] THEME = RE:WAVE era 토큰 (스타일 #2 §2.1).
+                 BASE([A])는 캐논 상속(#1 §15), 본 블록만 era 컬러/질감.
+                 KEY 매리골드 + RIDE Y2K 민트 + 라일락 골격 + 레트로 질감 +
+                 미니홈피 골격 + 깨짐/복원 상태 + 모노 패밀리.
+                 ★ CEO 확정 2026-06-23 (docs/14 §4 시안 ③ Lilac/Mint Y2K).
+   룰(스타일 #2 §19): 임의 HEX·임의 px·새 웹폰트 CDN 금지.
         새 값이 필요하면 여기 먼저 박고 var(--…)로만 참조.
    ============================================================ */
 
