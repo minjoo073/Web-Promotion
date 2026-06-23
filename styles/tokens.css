@@ -1,5 +1,6 @@
 /* ============================================================
    tokens.css — Web-Promotion (KiiiKiii · RE:WAVE era)
+   RE:WAVE era = 시안 ③ Lilac/Mint 확정(CEO, 2026-06-23)
    현재 활성 디자인 스타일: #1 Crowny Class
    (출처: .claude/knowledge/ui-designer/styles/01-crowny-class.md)
    ------------------------------------------------------------
@@ -119,43 +120,54 @@
 
 :root {
   /* ============ [B] THEME — RE:WAVE era 오버라이드 (스타일 #1 §18) ============
+     ★ CEO 확정: 시안 ③ Lilac/Mint Y2K (2026-06-23). 출처 docs/14 §4.
      활성 스타일 번호 = 여전히 #1. 여기서 *브랜드 두 값 + 레트로 질감*만 갈아끼움.
      색 출처(잠금, docs/06 §3-3): 미니홈피 스킨 파스텔 + 캠코더 비디오 신호색.
-     금지(docs/06 §3-3): 매끈 글로우 그라데이션·파스텔 글로우.
-     → 그라데이션 토큰은 *구조 유지*하되 era 적용 시 솔리드/하드 평면 대비 우선.
+     골격 = 라일락(연보라) / KEY = 매리골드 / RIDE = Y2K 민트.
+
+     ⛔⛔ 무광 가드 (③ 핵심 — docs/14 §4 ⚠가드 · docs/06 §3-3) ⛔⛔
+       ③ 파스텔은 "파스텔 글로우 금지"선과 *아슬한 경계*다. 이 THEME은
+       반드시 **무광 평면 + 하드 대비**로만 운용한다. 후속 빌드에서 금지:
+         · 매끈 글로우/소프트 글로우 그라데이션 (글로시 light-bloom)
+         · Aero/Y2K 글로시 베벨·하이라이트 광택·inner-shadow 윤내기
+         · 파스텔 면에 box-shadow blur로 발광시키는 처리
+       허용: 솔리드 면 · 하드 대비 · CTA 그림자(아래 --shadow-primary 1종 한정).
+       → 글로우/소프트 섀도 토큰은 이 블록에 *추가하지 않는다*(새지 않게 봉인).
      ----------------------------------------------------------------------- */
 
-  /* ----- era 브랜드 컬러 -----
-     --primary  = KEY(키) 계열: 열쇠/개봉/언락 연료. 도토리 갈색 아닌 햇살 앰버골드.
-                  (도토리 '명칭'·acorn 실루엣은 회피 / 따뜻한 호박빛 '색'은 일반 톤이라 OK)
-     --secondary = RIDE(물결타기) 계열: wave/왕복 점프. 비디오 신호 시안과 한 몸. */
-  --primary: #E5912B;
-  --primary-dark: #C2741A;
-  --primary-light: #F2B25A;
-  --primary-rgb: 229, 145, 43;
-  --secondary: #1AA6B7;
-  --secondary-light: #5BC9D6;
-  --gradient: linear-gradient(135deg, #E5912B 0%, #1AA6B7 100%); /* 글로우 금지: 솔리드 우선, 쓸 때 하드 */
-  --shadow-primary: 0 4px 14px rgba(229, 145, 43, 0.35);
+  /* ----- era 브랜드 컬러 (시안 ③) -----
+     --primary  = KEY(키) 계열: 열쇠/개봉/언락 연료. 클린 매리골드(파스텔 위 *튀는* 팝).
+                  주황-빨강 아닌 노랑쪽 → 싸이 시그니처 회피(docs/14 §0).
+     --secondary = RIDE(물결타기) 계열: Y2K 민트-아쿠아. 라일락 골격과 청량 한난 대비. */
+  --primary: #FFB52E;
+  --primary-dark: #E89412;
+  --primary-light: #FFCF6B;
+  --primary-rgb: 255, 181, 46;
+  --secondary: #3CCFB4;
+  --secondary-light: #7FE3D0;
+  --gradient: linear-gradient(135deg, #FFB52E 0%, #3CCFB4 100%); /* ⛔ 무광: 솔리드 우선, 쓸 때 하드 평면 (글로시 금지) */
+  --shadow-primary: 0 4px 14px rgba(255, 181, 46, 0.35);         /* CTA 그림자 1종 한정 — 발광 아님 */
 
   /* ----- 레트로 질감 (era 신규 · 네이밍 --retro-*) -----
-     비디오 신호색 = *질감 레이어 전용*. 적목 레드는 사물/화면에만, 인물 금지(docs/06 §3-6) */
-  --retro-redeye:   #FF3B3B;             /* 적목 — 사물/화면 한정 강조 */
-  --retro-green:    #2BE08A;             /* 인터레이스 그린 (저화질 비디오 신호) */
-  --retro-cyan:     #25D6E8;             /* 신호 시안 (디인터레이스 복원 하이라이트) */
-  --retro-scanline: rgba(20, 24, 28, 0.10); /* 스캔라인 오버레이 (콘텐츠 위 별도 레이어) */
-  --retro-static:   rgba(20, 24, 28, 0.06); /* 지직/노이즈 베이스 */
+     비디오 신호색 = *질감 레이어 전용*. 적목 레드는 사물/화면에만, 인물 금지(docs/06 §3-6).
+     ③ = 캔디 톤(달콤)이되 무광 평면 유지 — 글로우로 빛내지 않는다. */
+  --retro-redeye:   #FF5C7A;             /* 캔디 레드 — 사물/화면 한정 강조 */
+  --retro-green:    #5BE6A8;             /* 파스텔 인터레이스 그린 (저화질 비디오 신호) */
+  --retro-cyan:     #5BD6E8;             /* 캔디 시안 (디인터레이스 복원 하이라이트) */
+  --retro-scanline: rgba(40, 30, 48, 0.10); /* 플럼 틴트 스캔라인 오버레이 (콘텐츠 위 별도 레이어) */
+  --retro-static:   rgba(40, 30, 48, 0.06); /* 플럼 틴트 지직/노이즈 베이스 */
 
-  /* ----- 미니홈피 골격색 (일반 후기웹 파스텔 — 싸이 특유 배색 복제 회피, docs/09 §b) ----- */
-  --minihome-skin:  #E3E9F0;             /* 스킨판/프레임 면 (옅은 청회) */
-  --minihome-paper: #FBF7EE;             /* 다이어리·방명록 종이톤 */
-  --minihome-line:  #D7DEE6;             /* 미니홈피 프레임 구분선 */
+  /* ----- 미니홈피 골격색 (라일락 — 미니홈피 스킨샵 파스텔, 싸이 특유 배색 복제 회피 docs/09 §b) ----- */
+  --minihome-skin:  #E8E2F2;             /* 라일락(연보라) 스킨판/프레임 면 */
+  --minihome-paper: #FBF7FF;             /* 라일락-화이트 다이어리·방명록 종이톤 */
+  --minihome-line:  #DCD2EC;             /* 미니홈피 프레임 구분선 */
 
-  /* ----- "깨짐=디폴트, 복원=보상" 상태 토큰 (docs/06 §4-1 깨짐 토큰화) ----- */
-  --state-broken:    #9AA0A6;            /* 미복원 회색 스캔라인/텍스트 */
-  --state-broken-bg: #E7E9EC;            /* 미복원 영역 면 */
-  --state-restoring: var(--secondary);   /* 복원 처리 중 (시안) */
-  --state-restored:  var(--primary);     /* 복원 완료 (앰버골드) */
+  /* ----- "깨짐=디폴트, 복원=보상" 상태 토큰 (docs/06 §4-1 깨짐 토큰화) -----
+     ③ 주의: 파스텔에 깨짐이 묻히지 않게 --state-broken 라일락 그레이 대비를 또렷이(docs/14 §4). */
+  --state-broken:    #ADA8B8;            /* 라일락 그레이 — 미복원 스캔라인/텍스트 */
+  --state-broken-bg: #E6E1EE;            /* 미복원 영역 면 */
+  --state-restoring: var(--secondary);   /* 복원 처리 중 (민트 = RIDE) */
+  --state-restored:  var(--primary);     /* 복원 완료 (매리골드 = KEY) */
 
   /* ----- 모노 패밀리 (카운터·파일명·진행률 = 기계 복구 질감, docs/06 §3-2) ----- */
   --font-family-mono: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
