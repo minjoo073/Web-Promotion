@@ -1,0 +1,173 @@
+/* ============================================================
+   tokens.css — Web-Promotion (KiiiKiii · RE:WAVE era)
+   현재 활성 디자인 스타일: #1 Crowny Class
+   (출처: .claude/knowledge/ui-designer/styles/01-crowny-class.md)
+   ------------------------------------------------------------
+   구조 (한 파일·한 군데서 본다 — 스타일 #1 §19 코드 룰):
+     [A] BASE  = Crowny Class 시스템 토큰 전체 (스타일 #1 §15 그대로).
+                 radius/spacing/shadow/font-scale/transition/layout/border.
+                 *변경 금지* — 전 강팀 공유 캐논. 브랜드 캐논색도 여기 박음.
+     [B] THEME = RE:WAVE era 오버라이드. 스타일 #1 §18 방식
+                 ("브랜드 HEX 두 값만 갈아끼움 + 레트로 질감 토큰 추가").
+                 활성 스타일 번호는 *여전히 #1* (테마 오버라이드일 뿐 새 스타일 아님).
+                 ★ 픽셀 최종값은 CEO 확정 — 아래 era HEX는 docs/06 §3-3
+                   "미니홈피 스킨 파스텔 + 비디오 신호색" 출처에 묶인 *방향 제안값*.
+                   CEO가 픽셀 확정 시 토큰 이름·구조는 유지하고 값만 교체.
+   룰(스타일 #1 §19): 임의 HEX·임의 px·새 웹폰트 CDN 금지.
+        새 값이 필요하면 여기 먼저 박고 var(--…)로만 참조.
+   ============================================================ */
+
+/* ---- 폰트: Pretendard(본문/UI) · Agbalumo(로고 한정) ---- */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+/* 모노 = 시스템 폰트 스택 사용 (새 웹폰트 CDN 도입 아님 → 금기 비저촉).
+   용도: today/total 카운터·파일명·복원 진행률 = "기계가 복구 중" 질감 (docs/06 §3-2) */
+
+:root {
+  /* ============ [A] BASE — Crowny Class 시스템 (그대로) ============ */
+
+  /* ===== 브랜드 (BASE 캐논 — [B]에서 era 값으로 오버라이드됨) ===== */
+  --primary: #8A38F5;
+  --primary-dark: #7030D4;
+  --primary-light: #A855F7;
+  --primary-rgb: 138, 56, 245;
+  --secondary: #D53A6B;
+  --secondary-light: #F472B6;
+  --gradient: linear-gradient(135deg, #8A38F5 0%, #D53A6B 100%);
+
+  /* ===== 다크 (사이드바·우측 미니홈피 메뉴 프레임) ===== */
+  --dark-bg: #1B1D21;
+  --dark-secondary: #1A1C22;
+  --dark-tertiary: #2B2D35;
+  --dark-border: #3D3D54;
+
+  /* ===== 라이트 (콘텐츠) ===== */
+  --light-bg: #F3F4F6;
+  --light-card: #FFFFFF;
+  --light-border: #E5E7EB;
+  --light-hover: #F9FAFB;
+
+  /* ===== 텍스트 ===== */
+  --text-primary: #FFFFFF;
+  --text-dark: #1F2937;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+
+  /* ===== 상태 (Semantic) ===== */
+  --success: #22C55E;  --success-light: #DCFCE7;
+  --warning: #F59E0B;  --warning-light: #FEF3C7;
+  --error:   #EF4444;  --error-light:   #FEE2E2;
+  --info:    #3B82F6;  --info-light:    #DBEAFE;
+
+  /* ===== 모서리 ===== */
+  --radius-sm: 6px;
+  --radius-md: 10px;   /* 버튼·인풋 기본 */
+  --radius-lg: 12px;
+  --radius-xl: 16px;   /* 카드·모달·미니홈피 패널 기본 */
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* ===== 그림자 ===== */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.10);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+  --shadow-primary: 0 4px 14px rgba(138, 56, 245, 0.35); /* [B]에서 era 값 오버라이드 */
+
+  /* ===== 간격 (8px 그리드) ===== */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* ===== 레이아웃 ===== */
+  --sidebar-width: 260px;
+  --header-height: 64px;
+  --content-max-width: 1280px;
+
+  /* ===== 폰트 크기 (최소 16px — 절대 더 내리지 않음) ===== */
+  --font-xs:  16px;
+  --font-sm:  16px;
+  --font-md:  16px;   /* 본문 기본 */
+  --font-lg:  18px;
+  --font-xl:  20px;
+  --font-2xl: 26px;
+  --font-3xl: 32px;
+
+  /* ===== 트랜지션 ===== */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow:   0.3s ease;
+
+  /* ===== 보더 ===== */
+  --border-color: #E5E7EB;
+  --border: 1px solid #E5E7EB;
+
+  /* ===== 폰트 패밀리 ===== */
+  --font-family-base:    'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-display: 'Agbalumo', cursive; /* 로고·장식 한정 */
+
+  /* ===== 섹션/콘텐츠 공통 간격 ===== */
+  --section-gap:       var(--spacing-xl);
+  --section-padding-y: var(--spacing-xl);
+  --section-padding-x: var(--spacing-lg);
+  --content-gap:       var(--spacing-md);
+  --content-padding:   var(--spacing-md);
+  --card-padding:      var(--spacing-md);
+}
+
+:root {
+  /* ============ [B] THEME — RE:WAVE era 오버라이드 (스타일 #1 §18) ============
+     활성 스타일 번호 = 여전히 #1. 여기서 *브랜드 두 값 + 레트로 질감*만 갈아끼움.
+     색 출처(잠금, docs/06 §3-3): 미니홈피 스킨 파스텔 + 캠코더 비디오 신호색.
+     금지(docs/06 §3-3): 매끈 글로우 그라데이션·파스텔 글로우.
+     → 그라데이션 토큰은 *구조 유지*하되 era 적용 시 솔리드/하드 평면 대비 우선.
+     ----------------------------------------------------------------------- */
+
+  /* ----- era 브랜드 컬러 -----
+     --primary  = KEY(키) 계열: 열쇠/개봉/언락 연료. 도토리 갈색 아닌 햇살 앰버골드.
+                  (도토리 '명칭'·acorn 실루엣은 회피 / 따뜻한 호박빛 '색'은 일반 톤이라 OK)
+     --secondary = RIDE(물결타기) 계열: wave/왕복 점프. 비디오 신호 시안과 한 몸. */
+  --primary: #E5912B;
+  --primary-dark: #C2741A;
+  --primary-light: #F2B25A;
+  --primary-rgb: 229, 145, 43;
+  --secondary: #1AA6B7;
+  --secondary-light: #5BC9D6;
+  --gradient: linear-gradient(135deg, #E5912B 0%, #1AA6B7 100%); /* 글로우 금지: 솔리드 우선, 쓸 때 하드 */
+  --shadow-primary: 0 4px 14px rgba(229, 145, 43, 0.35);
+
+  /* ----- 레트로 질감 (era 신규 · 네이밍 --retro-*) -----
+     비디오 신호색 = *질감 레이어 전용*. 적목 레드는 사물/화면에만, 인물 금지(docs/06 §3-6) */
+  --retro-redeye:   #FF3B3B;             /* 적목 — 사물/화면 한정 강조 */
+  --retro-green:    #2BE08A;             /* 인터레이스 그린 (저화질 비디오 신호) */
+  --retro-cyan:     #25D6E8;             /* 신호 시안 (디인터레이스 복원 하이라이트) */
+  --retro-scanline: rgba(20, 24, 28, 0.10); /* 스캔라인 오버레이 (콘텐츠 위 별도 레이어) */
+  --retro-static:   rgba(20, 24, 28, 0.06); /* 지직/노이즈 베이스 */
+
+  /* ----- 미니홈피 골격색 (일반 후기웹 파스텔 — 싸이 특유 배색 복제 회피, docs/09 §b) ----- */
+  --minihome-skin:  #E3E9F0;             /* 스킨판/프레임 면 (옅은 청회) */
+  --minihome-paper: #FBF7EE;             /* 다이어리·방명록 종이톤 */
+  --minihome-line:  #D7DEE6;             /* 미니홈피 프레임 구분선 */
+
+  /* ----- "깨짐=디폴트, 복원=보상" 상태 토큰 (docs/06 §4-1 깨짐 토큰화) ----- */
+  --state-broken:    #9AA0A6;            /* 미복원 회색 스캔라인/텍스트 */
+  --state-broken-bg: #E7E9EC;            /* 미복원 영역 면 */
+  --state-restoring: var(--secondary);   /* 복원 처리 중 (시안) */
+  --state-restored:  var(--primary);     /* 복원 완료 (앰버골드) */
+
+  /* ----- 모노 패밀리 (카운터·파일명·진행률 = 기계 복구 질감, docs/06 §3-2) ----- */
+  --font-family-mono: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-md);   /* 16px — 본문 절대 하한 */
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--light-bg);
+}
+
+/* 카운터·파일명·복원률 등 "기계가 복구 중" 텍스트에만 적용 (장식 아닌 기능) */
+.mono { font-family: var(--font-family-mono); }

@@ -1,4 +1,4 @@
-# 07 · Technical Feasibility — KiiiKiii "RE:BLOG" 디지털 경험 (강개발 자문)
+# 07 · Technical Feasibility — KiiiKiii "RE:WAVE" 디지털 경험 (강개발 자문)
 
 > 강개발(개발자) 자문 산출물 · 2026-06-23
 > 기반: docs/05(캠페인 전략 5장치) · docs/04(발굴 era 질감) · docs/02(Core vs Campaign)
